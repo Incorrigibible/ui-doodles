@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Custom elements</title>
+  <link rel="stylesheet" href="fonts.css">
+  <link rel="stylesheet" href="choices.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.css" />
+  <link rel="stylesheet" href="style.css">
+  <script src="/choices.min.js"></script>
+</head>
+
+<body>
+  <main class="wrapper">
+
+    <div class="elements">
+      <div class="elements__checkbox">
+
+        <h3>Категории:</h3>
+        <label class="check">
+          <input class="check__input" type="checkbox" name="" id="">
+          <span class="check__box"></span>
+          Динозавры
+        </label>
+        <label class="check">
+          <input class="check__input" type="checkbox" name="" id="">
+          <span class="check__box"></span>
+          Медведи
+        </label>
+        <label class="check">
+          <input class="check__input" type="checkbox" name="" id="">
+          <span class="check__box"></span>
+          Косули
+        </label>
+        <label class="check">
+          <input class="check__input" type="checkbox" name="" id="">
+          <span class="check__box"></span>
+          Лисы
+        </label>
+        <label class="check">
+          <input class="check__input" type="checkbox" name="" id="">
+          <span class="check__box"></span>
+          Волки
+        </label>
+        <label class="check">
+          <input class="check__input" type="checkbox" name="" id="">
+          <span class="check__box"></span>
+          Олени и лоси
+        </label>
+
+      </div>
+
+      <div class="elements__choices">
+
+        <select name="select" id="">
+          <option placeholder>Материал</option>
+          <option value="1">Древесина</option>
+          <option value="2">Металл</option>
+          <option value="3">Камень</option>
+          <option value="4">Пластик</option>
+          <option value="5">Композитный</option>
+          <option value="6">Гипс</option>
+        </select>
+
+      </div>
+
+      <div id="map" style="width: 460px; height: 460px"></div>
+
+      <div class="custom-scroll" data-simplebar>
+        <p class="custom-scroll__text">Сложно сказать, почему многие известные личности представлены в исключительно положительном свете. Лишь активно развивающиеся страны третьего мира будут объективно рассмотрены соответствующими инстанциями. Мы вынуждены отталкиваться от того, что высокотехнологичная концепция общественного уклада представляет собой интересный эксперимент проверки глубокомысленных рассуждений. Имеется спорная точка зрения, гласящая примерно следующее: непосредственные участники технического прогресса освещают чрезвычайно интересные особенности картины в целом, однако конкретные выводы, разумеется, обнародованы. Значимость этих проблем настолько очевидна, что социально-экономическое развитие, а также свежий взгляд на привычные вещи - безусловно открывает новые горизонты для первоочередных требований.</p>
+      </div>
+
+      <div class="my-form">
+        <form class="form" action="">
+
+          <label class="form__input-label"><input class="form__input" type="text" placeholder="Имя*" data-validate-field="name"></label>
+          <label for="" class="form__input-label"><input class="form__input" type="tel" placeholder="Телефон*" data-validate-field="tel"></label>
+          <label for="" class="form__input-label"><input class="form__input" type="email" placeholder="E-mail*" data-validate-field="mail"></label>
+          <button class="form__button" type="submit">Заказать</button>
+
+        </form>
+      </div>
+
+      <div class="tooltip-container">
+        <div class="tooltip">
+
+          <p>Следует отметить, что социально-экономическое развитие способствует повышению качества переосмысления внешнеэкономических политик. <span class="tooltip-icon"><span class="tooltip-popup">Глава 2, страница 176</span>i</span></p>
+        </div>
+      </div>
+
+
+    </div>
+
+
+  </main>
+
+  <script src="https://api-maps.yandex.ru/2.1/?apikey=ваш API-ключ&lang=ru_RU" type="text/javascript"></script>
+  <script src="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.min.js"></script>
+  <script type="text/javascript"></script>
+  <script src="/inputmask.min.js"></script>
+  <script src="/just-validate.min.js"></script>
+  <script src="/script.js"></script>
+</body>
+
+</html>

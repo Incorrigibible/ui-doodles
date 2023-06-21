@@ -1,0 +1,356 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: lightgrey;
+}
+
+p {
+  margin: 0 auto;
+}
+
+input:focus {
+  background: #ffffcc;
+  outline: 5px solid #ffffcc;
+}
+
+.wrapper {
+  max-width: 1850px;
+  margin: 0 auto;
+  padding: 70px 0;
+}
+
+.elements {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  font-family: "Open Sans", sans-serif;
+}
+
+/* checkbox */
+
+.elements__checkbox {
+  background-color: white;
+  min-width: 176px;
+  height: 309px;
+  padding: 10px 30px 30px 30px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+}
+
+.test_1 {
+  display: flex;
+}
+
+.check {
+  margin-bottom: 15px;
+  padding-left: 1.2em;
+}
+
+.check__input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  clip: rect(0 0 0 0);
+}
+
+.check__box {
+  position: absolute;
+  margin-left: -1.2em;
+  margin-top: 3px;
+  width: 15px;
+  height: 15px;
+  border: 1px solid #999999;
+  border-radius: 3px;
+}
+
+.check__box::before {
+  content: "";
+  position: absolute;
+  border-left: 1px solid grey;
+  border-bottom: 1px solid grey;
+  opacity: 0;
+  transform: translate(44%, 70%) rotate(-45deg);
+  width: 7px;
+  height: 3px;
+  transition: border-left, border-bottom, opacity 0.3s ease;
+}
+
+.check__input:checked + .check__box::before {
+  opacity: 1;
+  border-left: 1px solid #ccb26e;
+  border-bottom: 1px solid #ccb26e;
+}
+
+.check__input:checked + .check__box {
+  border-color: #ccb26e;
+}
+
+.check__input:focus + .check__box,
+.check__input:active + .check__box {
+  box-shadow: 0 0 0 1px grey;
+}
+
+.check__input + .check__box {
+  box-shadow: 0 0 0 1px transparent;
+}
+
+/* choices */
+
+.elements__choices {
+  min-width: 176px;
+  display: flex;
+  flex-direction: column;
+}
+
+.choices__inner {
+  background-color: white;
+  border-radius: 12px;
+}
+
+.is-open .choices__inner {
+  border-radius: 12px;
+  border: 1px solid #ccb26e;
+  background-color: white;
+}
+
+.choices__placeholder {
+  color: black;
+  opacity: 1;
+}
+
+.choices__list--dropdown {
+  border-top: none;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+}
+
+.choices__list--dropdown .choices__placeholder {
+  display: none;
+}
+
+.choices[data-type*="select-one"]::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  color: #666666;
+  width: 8px;
+  height: 8px;
+  border-left: 2px solid black;
+  border-bottom: 2px solid black;
+  border-top: none;
+  border-right: none;
+  transform: translateY(-50%) rotate(-45deg);
+  transform-origin: center;
+  transition: transform 0.3s ease;
+}
+
+.choices[data-type*="select-one"].is-open::after {
+  border-color: #ccb26e;
+  transform: translateY(calc(-50% + 8px)) rotate(135deg);
+  transform-origin: center;
+  z-index: 3;
+}
+
+.choices.is-open .choices__inner {
+  position: relative;
+  z-index: 2;
+}
+
+.choices.is-open .choices__list--dropdown {
+  margin-top: -10px;
+  padding-top: 10px;
+  border-color: #ccb26e;
+}
+
+/* grey mask for yandex map */
+
+[class*="ymaps-2"][class*="-ground-pane"] {
+  filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><filter id='grayscale'><feColorMatrix type='matrix' values='0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0'/></filter></svg>#grayscale");
+  /* Firefox 3.5+ */
+  -webkit-filter: grayscale(100%);
+  /* Chrome 19+ & Safari 6+ */
+}
+
+/* custom scroll */
+
+.custom-scroll {
+  width: 400px;
+  height: 310px;
+  padding: 20px 30px 0 30px;
+  background-color: white;
+}
+
+.custom-scroll__text {
+  font-size: 14px;
+  line-height: 24px;
+}
+
+.simplebar-scrollbar::before {
+  background-color: #ccb26e;
+  opacity: 1;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 6px;
+  border-radius: 5px;
+}
+
+.simplebar-scrollbar.simplebar-visible::before {
+  opacity: 1;
+}
+
+/* Reinstate scrolling for non-JS clients */
+
+.simplebar-content-wrapper {
+  overflow: auto;
+}
+
+/* form */
+
+.my-form {
+  font-family: "Roboto", sans-serif;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 30px;
+  width: 440px;
+  height: 410px;
+  background-color: black;
+  border-radius: 10px;
+}
+
+.form__input {
+  width: 380px;
+  height: 60px;
+  margin-bottom: 10px;
+  border: 1px solid #ff5c00;
+  border-radius: 10px;
+  padding-left: 20px;
+  order: 1;
+}
+
+.error-order {
+  color: blue;
+}
+
+.form__input::placeholder {
+  font-family: "Roboto", sans-serif;
+}
+
+.form_input:focus {
+  border-radius: 10px;
+}
+
+.js-validate-error-label {
+  margin-left: 10px;
+  margin-bottom: 5px;
+}
+
+/* .js-validate-error-label:nth-child(2) {
+  order: -6;
+}
+
+input[data-validate-field="name"] {
+  order: -5;
+}
+
+.js-validate-error-label:nth-child(4) {
+  order: -4;
+}
+
+input[data-validate-field="tel"] {
+  order: -3;
+}
+
+.js-validate-error-label:nth-child(6) {
+  order: -2;
+} */
+
+.form__input-label {
+  display: flex;
+  flex-direction: column;
+}
+
+.form button {
+  margin-left: 2%;
+  margin-top: 4%;
+  padding: 20px 50px;
+  background-color: #ff5c00;
+  border-radius: 10px;
+  color: white;
+  font-size: 20px;
+  font-weight: 300;
+  align-self: flex-start;
+}
+
+.form__label {
+  color: #ff5c00;
+  margin-left: 20px;
+  margin-bottom: 5px;
+}
+
+/* tooltip */
+
+.tooltip-container {
+  width: 375px;
+  min-height: 160px;
+  font-size: 14px;
+  line-height: 24px;
+  background-color: white;
+  padding: 20px 80px 20px 20px;
+}
+
+.tooltip-icon {
+  background-color: #bcbcbc;
+  border-radius: 50%;
+  width: 16px;
+  height: 16px;
+  display: inline-flex;
+  text-align: center;
+  justify-content: center;
+  font-weight: 600;
+  color: white;
+  align-items: center;
+  position: relative;
+}
+
+.tooltip-popup {
+  opacity: 0;
+  position: absolute;
+  background-color: rgb(65, 62, 62);
+  height: 30px;
+  min-width: 160px;
+  top: -40px;
+  transition: opacity, 0.3s ease;
+}
+
+.tooltip-icon:hover {
+  background-color: #ccb26e;
+}
+
+.tooltip-icon:hover .tooltip-popup {
+  opacity: 1;
+}
+
+.tooltip-icon .tooltip-popup::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 10px 5px 0 5px;
+  border-color: rgb(65, 62, 62) transparent transparent transparent;
+  bottom: -10px;
+  left: 47%;
+}
